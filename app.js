@@ -98,17 +98,24 @@ function enableButtons() {
         }
     })
 
+    
+
     btns.forEach((btn) => {
         btn.addEventListener(
             'click',
             handler,
             false
         )
+
     })
 
 }
 
 function handler(e) {
+    btns.forEach((btn) => {
+        btn.removeEventListener('click', handler, false);
+    })
+
     const btn = e.target;
 
     if (checkAnswer(btn.textContent, correctAnswer)) {
@@ -152,9 +159,5 @@ function restartGame() {
 
 function disableTipButton(btn) {
     // console.log(btn);
-    if(btn.disabled){
-        btn.disabled = false;
-    } else {
-        btn.disabled = true;
-    }
+    btn.disabled = !btn.disabled;
 }
