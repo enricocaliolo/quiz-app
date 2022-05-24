@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+</head>
+<body>
+
+    <main>
+        <h1>Quiz App</h1>
+        <div class="quiz-container">
+            <div class="quiz-start">
+                <button class="btn start-btn">Start Quiz</button>
+            </div>
+
+            <div class="quiz-app not-visible">
+                <div class="tip-button-area">
+                    <button class="tip-btn">
+                        <span class="material-icons md-36">
+                            tips_and_updates
+                            </span>
+                    </button>
+                </div>
+
+                <div class="quiz-question-area">
+                    <p class="quiz-question">What is the capital of Brazil?</p>
+                </div>
+                
+                <div class="buttons-container">
+                    <button class="btn question-btn">A</button>
+                    <button class="btn question-btn">B</button>
+                    <button class="btn question-btn">C</button>
+                    <button class="btn question-btn">D</button>
+                </div>
+            </div>
+
+            <div class="final-screen-display not-visible">
+                <div class="final-screen">
+                    <h1>Score</h1>
+                    <h1 class="final-score">0</h1>
+                    <button class="btn restart-btn">Restart game!</button>
+                </div>
+                
+            </div>
+            
+        </div>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+    
+</body>
+</html>
