@@ -1,4 +1,0 @@
-- tela aparece pedindo pra começar o jogo
-    - botão 'Start game'
-
-- após o click, aparecer a pergunta + quatro botões com as respostas
