@@ -120,12 +120,14 @@ function handler(e) {
 
     if (checkAnswer(btn.textContent, correctAnswer)) {
         btn.classList.add('correctAnswer');
+        userScore++;
     } else {
         btn.classList.add('wrongAnswer');
+        showCorrectAnswer();
     }
 
     setTimeout(function () {
-        removeBtnClasses(btn),
+        removeBtnClasses(btns),
             nextQuestion()
     }, 2000);
 }
@@ -133,19 +135,31 @@ function handler(e) {
 
 function checkAnswer(userAnswer, correctAnswer) {
     if (userAnswer === correctAnswer) {
-        userScore++;
         return true;
     } else {
         return false;
     }
 }
 
-function removeBtnClasses(btn) {
-    if (btn.classList.contains('correctAnswer')) {
-        btn.classList.remove('correctAnswer');
-    } else if (btn.classList.contains('wrongAnswer')) {
-        btn.classList.remove('wrongAnswer');
-    }
+function showCorrectAnswer() {
+    btns.forEach((btn) => {
+        if(checkAnswer(btn.textContent, correctAnswer)){
+            btn.classList.add('correctAnswer');
+        }
+    })
+}
+
+function removeBtnClasses(btns) {
+
+    btns.forEach((btn) => {
+        if ((btn.classList.contains('correctAnswer'))) {
+            btn.classList.remove('correctAnswer');
+        } else if (btn.classList.contains('wrongAnswer')) {
+            btn.classList.remove('wrongAnswer');
+        }
+    })
+
+    
 }
 
 function restartGame() {
