@@ -126,6 +126,8 @@ function handler(e) {
         showCorrectAnswer();
     }
 
+    tipBtn.removeEventListener('click', tipButton, false);
+
     setTimeout(function () {
         removeBtnClasses(btns),
             nextQuestion()
